@@ -25,7 +25,7 @@ chmod a+x keytool
 # sign APK
 ./jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $storeFile -storepass $storePassword -keypass $keyAliasPassword $APK $keyAlias
 #verify
-./jarsigner -verify $APK
+./jarsigner -verify -keystore $storeFile $APK
 
 chmod a+x zipalign
 #zipalign
